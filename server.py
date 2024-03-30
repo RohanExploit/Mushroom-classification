@@ -1,5 +1,8 @@
 import streamlit as st
 import pickle
+import numpy as np
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler((0,1))
 
 with open('mushroom_classification.pkl','rb') as f:
     model = pickle.load(f)
@@ -50,5 +53,16 @@ for text in text.split('\n'):
         arr.append(mapping_list[ans])
 print(arr)
 
-def prediction():
-    pass
+def prediction(arr):
+    arr = np.array(arr).reshape(-1,1)
+    print("numpy array ",arr.shape)
+    arr=scaler.fit_transform(arr).reshape(-1,)
+    print("After fit tranformation ",arr.shape)
+    output = model.predict([arr])
+    if output[0]==1.:
+        st.write("Prediction: The Mushroom is Edible")
+    else:
+        st.write("Prediction: The Mushroom is Poisonous",)
+
+if st.button("submit"):
+    prediction(arr)

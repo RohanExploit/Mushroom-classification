@@ -29,37 +29,98 @@ musty=6
 none=7
 pungent=8
 spicy=9
-attached=a
-descending=d
-free=f
-notched=n
-close=c
-crowded=w
-distant=d
-broad=b
-narrow=n
-black=k
-brown=n
-buff=b
-chocolate=h
-gray=g
-green=r
-orange=o
-pink=p
-purple=u
-red=e
-white=w
-yellow=y
-stalk-shape: enlarging=e,tapering=t
-stalk-root: bulbous=b,club=c,cup=u,equal=e,rhizomorphs=z,rooted=r,missing=?
-stalk-surface-above-ring: fibrous=f,scaly=y,silky=k,smooth=s
-stalk-surface-below-ring: fibrous=f,scaly=y,silky=k,smooth=s
-stalk-color-above-ring: brown=n,buff=b,cinnamon=c,gray=g,orange=o,pink=p,red=e,white=w,yellow=y
-stalk-color-below-ring: brown=n,buff=b,cinnamon=c,gray=g,orange=o,pink=p,red=e,white=w,yellow=y
-veil-type: partial=p,universal=u
-veil-color: brown=n,orange=o,white=w,yellow=y
-ring-number: none=n,one=o,two=t
-ring-type: cobwebby=c,evanescent=e,flaring=f,large=l,none=n,pendant=p,sheathing=s,zone=z
-spore-print-color: black=k,brown=n,buff=b,chocolate=h,green=r,orange=o,purple=u,white=w,yellow=y
-population: abundant=a,clustered=c,numerous=n,scattered=s,several=v,solitary=y
-habitat: grasses=g,leaves=l,meadows=m,paths=p,urban=u,waste=w,woods=d
+attached=1
+descending=2
+free=3
+notched=4
+close=1
+crowded=2
+distant=3
+broad=1
+narrow=2
+black=1
+brown=2
+buff=3
+chocolate=4
+gray=5
+green=6
+orange=7
+pink=8
+purple=9
+red=10
+white=11
+yellow=12
+enlarging=1
+tapering=2
+bulbous=1
+club=2
+cup=3
+equal=4
+rhizomorphs=5
+rooted=6
+missing=7
+fibrous=1
+scaly=2
+silky=3
+smooth=4
+fibrous=1
+scaly=2
+silky=3
+smooth=4
+brown=1
+buff=2
+cinnamon=3
+gray=4
+orange=5
+pink=6
+red=7
+white=8
+yellow=9
+brown=1
+buff=2
+cinnamon=3
+gray=4
+orange=5
+pink=6
+red=7
+white=8
+yellow=9
+partial=1
+universal=2
+brown=1
+orange=2
+white=3
+yellow=4
+none=1
+one=2
+two=3
+cobwebby=1
+evanescent=2
+flaring=3
+large=4
+none=5
+pendant=6
+sheathing=7
+zone=8
+black=1
+brown=2
+buff=3
+chocolate=4
+green=5
+orange=6
+purple=7
+white=8
+yellow=9
+abundant=1
+clustered=2
+numerous=3
+scattered=4
+several=5
+solitary=6
+grasses=1
+leaves=2
+meadows=3
+paths=4
+urban=5
+waste=6
+woods=7
