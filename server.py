@@ -49,7 +49,7 @@ for line in text.split("\n"):
     if key not in dic:
         dic[key]=sub_dic
     key+=1
-print(dic)
+# print(dic)
 
 
 
@@ -62,17 +62,18 @@ for text in text.split('\n'):
     for i in range(len(tail)):
         tail[i] = tail[i][:-2]
     ans = st.selectbox(head, tail)
-    arr.append(dic[count][ans])
+    # print(((dic[count][ans] - 1)*(1-0)/(len(dic[count])-1)))
+    arr.append(((dic[count][ans] - 1)*(1-0))/(len(dic[count])-1))
     count+=1
 print(arr)
-
+print(">>>>>>>>>>>>>")
 def prediction(arr):
-    arr = np.array(arr).reshape(-1,1)
-    print("numpy array ",arr)
-    arr=scaler.fit_transform(arr).reshape(-1,)
-    print("After fit tranformation ",arr)
+    arr = np.array(arr).reshape(-1,)
+    # print("numpy array ",arr)
+    # arr=scaler.fit_transform(arr).reshape(-1,)
+    # print("After fit tranformation ",arr)
     output = model.predict([arr])
-    print(output[0])
+    # print(output[0])
     if output[0]==1.0:
         st.write("Prediction: The Mushroom is Edible")
     else:
