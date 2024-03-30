@@ -1,8 +1,10 @@
 import streamlit as st
 import pickle
 import numpy as np
-from sklearn.preprocessing import MinMaxScaler
-scaler = MinMaxScaler((0,1))
+
+import joblib
+scaler=joblib.load("scaler.sav")
+
 
 with open('mushroom_classification.pkl','rb') as f:
     model = pickle.load(f)
@@ -32,16 +34,27 @@ ring-type: cobwebby=c,evanescent=e,flaring=f,large=l,none=n,pendant=p,sheathing=
 spore-print-color: black=k,brown=n,buff=b,chocolate=h,green=r,orange=o,purple=u,white=w,yellow=y
 population: abundant=a,clustered=c,numerous=n,scattered=s,several=v,solitary=y
 habitat: grasses=g,leaves=l,meadows=m,paths=p,urban=u,waste=w,woods=d'''
+key = 1
+dic={}
+for line in text.split("\n"):
+    feature = line.split(": ")
+    
+    sub_dic={}
+    count=1
+    for each in feature[1].split(","):
+        sub_key = each.split("=")[0]
+        if sub_key not in sub_dic:
+            sub_dic[sub_key]=count
+            count+=1
+    if key not in dic:
+        dic[key]=sub_dic
+    key+=1
+print(dic)
 
-mapping_list={}
-with open('mapping.txt','r') as file:
-    data = file.readlines()
-    for i in data:
-        mapping_list[i[:-3]] = i[-2]
 
-# print(mapping_list)
 
 arr=[]
+count=1
 for text in text.split('\n'):
     split = text.split(": ")
     head = split[0]
@@ -49,17 +62,18 @@ for text in text.split('\n'):
     for i in range(len(tail)):
         tail[i] = tail[i][:-2]
     ans = st.selectbox(head, tail)
-    if ans in mapping_list:
-        arr.append(mapping_list[ans])
+    arr.append(dic[count][ans])
+    count+=1
 print(arr)
 
 def prediction(arr):
     arr = np.array(arr).reshape(-1,1)
-    print("numpy array ",arr.shape)
+    print("numpy array ",arr)
     arr=scaler.fit_transform(arr).reshape(-1,)
-    print("After fit tranformation ",arr.shape)
+    print("After fit tranformation ",arr)
     output = model.predict([arr])
-    if output[0]==1.:
+    print(output[0])
+    if output[0]==1.0:
         st.write("Prediction: The Mushroom is Edible")
     else:
         st.write("Prediction: The Mushroom is Poisonous",)
