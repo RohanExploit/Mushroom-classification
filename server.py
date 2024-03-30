@@ -69,15 +69,11 @@ print(arr)
 print(">>>>>>>>>>>>>")
 def prediction(arr):
     arr = np.array(arr).reshape(-1,)
-    # print("numpy array ",arr)
-    # arr=scaler.fit_transform(arr).reshape(-1,)
-    # print("After fit tranformation ",arr)
     output = model.predict([arr])
-    # print(output[0])
     if output[0]==1.0:
-        st.write("Prediction: The Mushroom is Edible")
+        st.write("## The Mushroom is Edible")
     else:
-        st.write("Prediction: The Mushroom is Poisonous",)
+        st.write("## The Mushroom is Poisonous",)
 
 if st.button("submit"):
     prediction(arr)
