@@ -1,0 +1,33 @@
+2024-04-09 20:57:57,167 INFO Loading the dataset
+2024-04-09 20:57:57,803 INFO Loading dataset done
+2024-04-09 22:17:13,087 INFO Loading the dataset
+2024-04-09 22:17:14,393 INFO Done Loading...
+2024-04-09 22:39:09,079 INFO Loading the Mushroom dataset
+2024-04-09 22:39:09,253 INFO Done Loading...
+2024-04-09 22:39:09,372 INFO Trying to map characters into numeric values
+2024-04-09 22:39:09,436 INFO Mapping Done...
+2024-04-09 22:39:09,649 INFO saving column names inside variable named as feature_name
+2024-04-09 22:39:09,808 INFO divided features into input x and output y
+2024-04-09 22:39:09,813 INFO so our input size will become (8124, 22) and output size will become (8124,)
+2024-04-09 22:47:01,170 INFO Loading the Mushroom dataset
+2024-04-09 22:47:01,357 INFO Done Loading...
+2024-04-09 22:47:01,463 INFO Trying to map characters into numeric values
+2024-04-09 22:47:01,495 INFO Mapping Done...
+2024-04-09 22:47:01,659 INFO saving column names inside variable named as feature_name
+2024-04-09 22:47:01,739 INFO divided features into input x and output y
+2024-04-09 22:47:01,743 INFO so our input size will become (8124, 22) and output size will become (8124,)
+2024-04-09 22:47:01,757 INFO Converting input and output into numpy array and reshaping it
+2024-04-09 22:47:01,784 INFO Scaling the input data and output data using MinMaxScaler
+2024-04-09 22:47:01,857 INFO Now x and y shape will be x = (8124, 22) y = (8124, 1)
+2024-04-09 22:49:27,306 INFO Loading the Mushroom dataset
+2024-04-09 22:49:27,321 INFO Done Loading...
+2024-04-09 22:49:27,373 INFO Trying to map characters into numeric values
+2024-04-09 22:49:27,406 INFO Mapping Done...
+2024-04-09 22:49:27,710 INFO saving column names inside variable named as feature_name
+2024-04-09 22:49:27,772 INFO divided features into input x and output y
+2024-04-09 22:49:27,775 INFO so our input size will become (8124, 22) and output size will become (8124,)
+2024-04-09 22:49:27,803 INFO Converting input and output into numpy array and reshaping it
+2024-04-09 22:49:27,833 INFO Scaling the input data and output data using MinMaxScaler
+2024-04-09 22:49:27,871 INFO Now x and y shape will be x = (8124, 22) y = (8124, 1)
+2024-04-09 22:49:27,883 INFO splitting the data into training and testing sets
+2024-04-09 22:49:27,885 INFO training set size is (5686, 22) and testing set size is (2438, 22)
