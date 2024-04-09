@@ -2,8 +2,8 @@ import streamlit as st
 import pickle
 import numpy as np
 
-import joblib
-scaler=joblib.load("scaler.sav")
+# import joblib
+# scaler=joblib.load("scaler.sav")
 
 
 with open('mushroom_classification.pkl','rb') as f:
