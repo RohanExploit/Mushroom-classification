@@ -31,3 +31,22 @@
 2024-04-09 22:49:27,871 INFO Now x and y shape will be x = (8124, 22) y = (8124, 1)
 2024-04-09 22:49:27,883 INFO splitting the data into training and testing sets
 2024-04-09 22:49:27,885 INFO training set size is (5686, 22) and testing set size is (2438, 22)
+2024-04-10 13:45:49,222 INFO Loading the Mushroom dataset
+2024-04-10 13:45:51,661 INFO Done Loading...
+2024-04-10 13:45:51,738 INFO Trying to map characters into numeric values
+2024-04-10 13:45:51,759 INFO Mapping Done...
+2024-04-10 13:45:51,929 INFO saving column names inside variable named as feature_name
+2024-04-10 13:45:51,996 INFO divided features into input x and output y
+2024-04-10 13:45:52,003 INFO so our input size will become (8124, 22) and output size will become (8124,)
+2024-04-10 13:45:52,028 INFO Converting input and output into numpy array and reshaping it
+2024-04-10 13:45:56,024 INFO Scaling the input data and output data using MinMaxScaler
+2024-04-10 13:45:56,062 INFO Now x and y shape will be x = (8124, 22) y = (8124, 1)
+2024-04-10 13:45:56,547 INFO splitting the data into training and testing sets
+2024-04-10 13:45:56,547 INFO training set size is (5686, 22) and testing set size is (2438, 22)
+2024-04-10 13:45:57,596 INFO Initialize different Classifications model
+2024-04-10 13:45:57,616 INFO Testing different models for classification using GridSearchCV 
+2024-04-10 13:46:21,393 INFO Select the best final model with best parameters and fit the data in model
+2024-04-10 13:46:21,425 INFO Testing the model with test data 
+2024-04-10 13:46:21,507 INFO Analyzing the model with confusion matrix 
+2024-04-10 13:46:21,541 INFO Checking the recall score of model 
+2024-04-10 13:46:21,570 INFO Export the model using pickle
