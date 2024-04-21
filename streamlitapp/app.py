@@ -54,6 +54,7 @@ for line in text.split("\n"):
 
 
 arr=[]
+new_arr =[]
 count=1
 for text in text.split('\n'):
     split = text.split(": ")
@@ -62,16 +63,24 @@ for text in text.split('\n'):
     for i in range(len(tail)):
         tail[i] = tail[i][:-2]
     ans = st.selectbox(head, tail)
+    for token in split[1].split(','):
+        tokenizer = token.split('=')
+        if tokenizer[0] == ans:
+            new_arr.append(tokenizer[1])
     # print(((dic[count][ans] - 1)*(1-0)/(len(dic[count])-1)))
     arr.append(((dic[count][ans] - 1)*(1-0))/(len(dic[count])-1))
     count+=1
-print(arr)
+print(new_arr)
+
+
 print(">>>>>>>>>>>>>")
 def prediction(arr):
     arr = np.array(arr).reshape(-1,)
     output = model.predict([arr])
+    cql = "INSERT into table values(?,?,?,?,?)"
     if output[0]==1.0:
         st.write("## The Mushroom is Edible")
+        
     else:
         st.write("## The Mushroom is Poisonous",)
 
