@@ -1,7 +1,21 @@
 import streamlit as st
 import pickle
 import numpy as np
+from cassandra.cluster import Cluster
+from cassandra.auth import PlainTextAuthProvider
+import json
+cloud_config= {
+  'secure_connect_bundle': 'secure-connect-db-mushroom.zip'
+}
+with open("../db_mushroom-token.json") as f:
+    secrets = json.load(f)
 
+CLIENT_ID = secrets["clientId"]
+CLIENT_SECRET = secrets["secret"]
+
+auth_provider = PlainTextAuthProvider(CLIENT_ID, CLIENT_SECRET)
+cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider)
+session = cluster.connect('keyspace_mushroom')
 
 with open('mushroom_classification.pkl','rb') as f:
     model = pickle.load(f)
@@ -68,19 +82,24 @@ for text in text.split('\n'):
     arr.append(((dic[count][ans] - 1)*(1-0))/(len(dic[count])-1))
     count+=1
 print(new_arr)
-
-
 print(">>>>>>>>>>>>>")
+
+
 def prediction(arr):
     arr = np.array(arr).reshape(-1,)
     output = model.predict([arr])
-    cql = "INSERT into table values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
-    new_arr = new_arr.insert(0, output)
-    curr.execute(cql,new)
     if output[0]==1.0:
         st.write("## The Mushroom is Edible")
+        pred_class = 'e'
     else:
         st.write("## The Mushroom is Poisonous")
-
+        pred_class = 'p'
+    return pred_class
+    
 if st.button("submit"):
-    prediction(arr)
+    pred_class = prediction(arr)
+    cql = "INSERT into keyspace_mushroom values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+    new_arr.insert(0, pred_class)
+    print(new_arr)
+    new_data = session.execute(cql,new_arr)
+    print(new_data)
