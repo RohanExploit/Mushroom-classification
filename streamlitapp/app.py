@@ -2,9 +2,6 @@ import streamlit as st
 import pickle
 import numpy as np
 
-# import joblib
-# scaler=joblib.load("scaler.sav")
-
 
 with open('mushroom_classification.pkl','rb') as f:
     model = pickle.load(f)
@@ -77,12 +74,13 @@ print(">>>>>>>>>>>>>")
 def prediction(arr):
     arr = np.array(arr).reshape(-1,)
     output = model.predict([arr])
-    cql = "INSERT into table values(?,?,?,?,?)"
+    cql = "INSERT into table values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+    new_arr = new_arr.insert(0, output)
+    curr.execute(cql,new)
     if output[0]==1.0:
         st.write("## The Mushroom is Edible")
-        
     else:
-        st.write("## The Mushroom is Poisonous",)
+        st.write("## The Mushroom is Poisonous")
 
 if st.button("submit"):
     prediction(arr)
