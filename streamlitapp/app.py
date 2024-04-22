@@ -4,6 +4,7 @@ import numpy as np
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
 import json
+from uuid import uuid1
 cloud_config= {
   'secure_connect_bundle': 'secure-connect-db-mushroom.zip'
 }
@@ -98,8 +99,16 @@ def prediction(arr):
     
 if st.button("submit"):
     pred_class = prediction(arr)
-    cql = "INSERT into keyspace_mushroom values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
     new_arr.insert(0, pred_class)
+    column_names=['class','cap_shape','cap_surface','cap_color','bruises','odor','gill_attachment','gill_spacing','gill_size','gill_color','stalk_shape','stalk_root','stalk_surface_above_ring','stalk_surface_below_ring','stalk_color_above_ring','stalk_color_below_ring','veil_type','veil_color','ring_number','ring_type','spore_print_color','population','habitat']
+    column_names=sorted(column_names)
+    column_names.insert(0,'id')
+    new_arr.insert(0,uuid1())
+    insert_query = f"INSERT INTO mushrooms ({', '.join(column_names)}) VALUES ({', '.join(['?'] * len(column_names))})"
+
+    prepared_statement = session.prepare(insert_query)
+    bound_statement = prepared_statement.bind(new_arr)
+    session.execute(bound_statement)
+
+    
     print(new_arr)
-    new_data = session.execute(cql,new_arr)
-    print(new_data)
