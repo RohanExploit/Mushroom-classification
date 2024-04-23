@@ -3,7 +3,7 @@
 ### This project utilizes machine learning to classify mushrooms as edible or poisonous.
 
 ## Dataset Information
-### We leverage a pre-existing dataset containing descriptions of various mushroom species and their edibility labels (e.g., The Audubon Society Field Guide data or Kaggle's "Mushroom Classification" dataset). This data provides features like cap shape, color, and gill characteristics for model training.
+We leverage a pre-existing dataset containing descriptions of various mushroom species and their edibility labels (e.g., The Audubon Society Field Guide data or Kaggle's "Mushroom Classification" dataset). This data provides features like cap shape, color, and gill characteristics for model training.
 
 ## Technical Approach
 1. Data Preprocessing: Clean and prepare the dataset, addressing missing values and ensuring consistency for optimal model training.
