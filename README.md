@@ -38,7 +38,10 @@ cd path\to\Mushroom-classification\streamlitapp
 pip install -r requirements.txt
 ```
 
-
+run the application using the following command
+```
+streamlit run app.py
+```
 
 ## Technologies Used
 1. Python
