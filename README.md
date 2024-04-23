@@ -17,10 +17,10 @@ We leverage a pre-existing dataset containing descriptions of various mushroom s
 This project is written in Python.  Specific instructions on setting up the environment and running the code will be provided in a separate document.
 
 ## Technologies Used
-Python
-scikit-learn
-Pandas (Optional, for data manipulation)
-Streamlit (Optional, for user interface development)
-Specific libraries used within scikit-learn (e.g., SVM, Decision Tree)
-Visualization libraries used for data exploration (e.g., Matplotlib, Seaborn)
-Links to your project repository (if applicable)
+1. Python
+2. scikit-learn
+3. Pandas (Optional, for data manipulation)
+4. Streamlit (Optional, for user interface development)
+5. Specific libraries used within scikit-learn (e.g., SVM, Decision Tree)
+6. Visualization libraries used for data exploration (e.g., Matplotlib, Seaborn)
+7. Links to your project repository [Github - Mushroom Classification](https://github.com/Vishalkm206/Mushroom-classification)
