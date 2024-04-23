@@ -21,6 +21,23 @@ First of all clone this repository. by running this command
 git clone https://github.com/Vishalkm206/Mushroom-classification
 
 ```
+Make sure you are using python version 3.7,3.8,3.9 or 3.10. not 3.11 onwards because 1 library was removed from this 3.11 onwards.
+or you can use anaconda3 to create virtual environments
+Note :- if you are facing issues with this code try to open anaconda prompt and there you paste this code
+```
+conda create -n venv python==3.10
+```
+Activate this environment
+```
+conda activate venv
+```
+now copy the path of this repository where you have cloned it before
+and type in your terminal and install all dependencies
+```
+cd path\to\Mushroom-classification\streamlitapp
+pip install -r requirements.txt
+```
+
 
 
 ## Technologies Used
