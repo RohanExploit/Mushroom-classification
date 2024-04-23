@@ -14,7 +14,14 @@ We leverage a pre-existing dataset containing descriptions of various mushroom s
 ### Disclaimer: This system is intended as a supportive tool and should not be solely relied upon for mushroom identification.  Always consult a reliable field guide or expert for confirmation before consuming any mushroom.
 
 ## Running the Project
-This project is written in Python.  Specific instructions on setting up the environment and running the code will be provided in a separate document.
+### This project is written in Python.  Specific instructions on setting up the environment and running the code
+
+First of all clone this repository. by running this command
+```
+git clone https://github.com/Vishalkm206/Mushroom-classification
+
+```
+
 
 ## Technologies Used
 1. Python
